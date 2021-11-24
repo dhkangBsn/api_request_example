@@ -12,7 +12,8 @@ def main():
     payload = {'name':'기다리지마요'}
     session = requests.Session()
     res = session.post(URL, headers=headers, data=payload)
-    print(res.text)
+    result = json.loads(res.text)
+    print(result)
     session.close()
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
