@@ -6,12 +6,14 @@ import json
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def main(name):
+def main():
     URL = 'http://15.164.232.127:5000/recommend'
     headers = {'User-Agent':'Mozila/5.0'}
     payload = {'name':'기다리지마요'}
     session = requests.Session()
     res = session.post(URL, headers=headers, data=payload)
+    print(res.text)
+    session.close()
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
